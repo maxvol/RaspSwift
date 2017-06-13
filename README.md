@@ -1,8 +1,8 @@
 # README #
 
-RASP - Reactive Aggregate State Pipeline
+**RASP - Reactive Aggregate State Pipeline**
 
-This framework is inspired by Redux but is build on top op RxSwift framework.
+This framework is inspired by Redux and build on top op RxSwift framework.
 
 On many occasions, it makes more sense to group state values together by domain, such as:
 
@@ -15,9 +15,9 @@ On many occasions, it makes more sense to group state values together by domain,
 
 How it works (per domain state):
 
-* events from different sources are gathered into single stream with .merge() operator
-* on every event from the combined stream, it gets applied (reduced) to the current state via .scan operator()
-* consumers can subscribe to domain state as a whole or to a single field by using selector which is .map().distinctUntilChanged()
+* events from different sources are gathered into a single stream with *.merge()* operator
+* on every event from the combined stream, it gets applied (reduced) to the current state via *.scan()* operator
+* consumers can subscribe to domain state as a whole or to a single field by using selector which is *.map().distinctUntilChanged()*
 
 ### What is this repository for? ###
 
