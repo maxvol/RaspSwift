@@ -2,7 +2,7 @@
 
 **RASP - Reactive Aggregate State Pipeline**
 
-This framework is inspired by Redux and build on top op RxSwift framework.
+This framework is inspired by Redux and built on top op RxSwift framework.
 
 On many occasions, it makes more sense to group state values together by domain, such as:
 
