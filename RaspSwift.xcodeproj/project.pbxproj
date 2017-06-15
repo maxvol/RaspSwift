@@ -16,10 +16,7 @@
 		9446ADDE1EF05E110036A603 /* RaspSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADDD1EF05E110036A603 /* RaspSource.swift */; };
 		9446ADE01EF05E360036A603 /* Observable+Rasp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADDF1EF05E360036A603 /* Observable+Rasp.swift */; };
 		9446ADE31EF066860036A603 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9446ADE21EF066860036A603 /* RxSwift.framework */; };
-		946552301EF267B0001AD6AC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9465522E1EF267B0001AD6AC /* Info.plist */; };
-		946552311EF267B0001AD6AC /* RaspSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9465522F1EF267B0001AD6AC /* RaspSwiftTests.swift */; };
-		946552351EF267D2001AD6AC /* RaspSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 946552331EF267D2001AD6AC /* RaspSwift.h */; };
-		946552361EF267D2001AD6AC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 946552341EF267D2001AD6AC /* Info.plist */; };
+		946552351EF267D2001AD6AC /* iOS_RaspSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 946552331EF267D2001AD6AC /* iOS_RaspSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		946552451EF267F9001AD6AC /* macOS_RaspSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9465523C1EF267F8001AD6AC /* macOS_RaspSwift.framework */; };
 		9465524A1EF267F9001AD6AC /* macOS_RaspSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946552491EF267F9001AD6AC /* macOS_RaspSwiftTests.swift */; };
 		9465524C1EF267F9001AD6AC /* macOS_RaspSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 9465523E1EF267F8001AD6AC /* macOS_RaspSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,8 +77,8 @@
 		9446ADDF1EF05E360036A603 /* Observable+Rasp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Rasp.swift"; sourceTree = "<group>"; };
 		9446ADE21EF066860036A603 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		9465522E1EF267B0001AD6AC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9465522F1EF267B0001AD6AC /* RaspSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaspSwiftTests.swift; sourceTree = "<group>"; };
-		946552331EF267D2001AD6AC /* RaspSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaspSwift.h; sourceTree = "<group>"; };
+		9465522F1EF267B0001AD6AC /* iOS_RaspSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOS_RaspSwiftTests.swift; sourceTree = "<group>"; };
+		946552331EF267D2001AD6AC /* iOS_RaspSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOS_RaspSwift.h; sourceTree = "<group>"; };
 		946552341EF267D2001AD6AC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9465523C1EF267F8001AD6AC /* macOS_RaspSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = macOS_RaspSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9465523E1EF267F8001AD6AC /* macOS_RaspSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macOS_RaspSwift.h; sourceTree = "<group>"; };
@@ -184,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				9465522E1EF267B0001AD6AC /* Info.plist */,
-				9465522F1EF267B0001AD6AC /* RaspSwiftTests.swift */,
+				9465522F1EF267B0001AD6AC /* iOS_RaspSwiftTests.swift */,
 			);
 			path = iOS_RaspSwiftTests;
 			sourceTree = "<group>";
@@ -192,7 +189,7 @@
 		946552321EF267D2001AD6AC /* iOS_RaspSwift */ = {
 			isa = PBXGroup;
 			children = (
-				946552331EF267D2001AD6AC /* RaspSwift.h */,
+				946552331EF267D2001AD6AC /* iOS_RaspSwift.h */,
 				946552341EF267D2001AD6AC /* Info.plist */,
 			);
 			path = iOS_RaspSwift;
@@ -223,7 +220,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				946552351EF267D2001AD6AC /* RaspSwift.h in Headers */,
+				946552351EF267D2001AD6AC /* iOS_RaspSwift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,8 +363,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				946552361EF267D2001AD6AC /* Info.plist in Resources */,
-				946552301EF267B0001AD6AC /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +417,6 @@
 				9446ADDE1EF05E110036A603 /* RaspSource.swift in Sources */,
 				9446ADE01EF05E360036A603 /* Observable+Rasp.swift in Sources */,
 				9446ADD61EF05D4B0036A603 /* RaspSelector.swift in Sources */,
-				946552311EF267B0001AD6AC /* RaspSwiftTests.swift in Sources */,
 				9446ADD41EF05D3F0036A603 /* RaspReducer.swift in Sources */,
 				9446ADD81EF05D560036A603 /* RaspState.swift in Sources */,
 			);
@@ -587,7 +581,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = RaspSwift/Info.plist;
+				INFOPLIST_FILE = iOS_RaspSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RaspSwift;
@@ -611,7 +605,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = RaspSwift/Info.plist;
+				INFOPLIST_FILE = iOS_RaspSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RaspSwift;
@@ -766,6 +760,7 @@
 				9465524F1EF267F9001AD6AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		946552501EF267F9001AD6AC /* Build configuration list for PBXNativeTarget "macOS_RaspSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -774,6 +769,7 @@
 				946552521EF267F9001AD6AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
