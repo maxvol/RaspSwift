@@ -28,7 +28,6 @@
 		946552581EF26814001AD6AC /* RaspSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADDD1EF05E110036A603 /* RaspSource.swift */; };
 		946552591EF26814001AD6AC /* Observable+Rasp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADDF1EF05E360036A603 /* Observable+Rasp.swift */; };
 		9465525B1EF26828001AD6AC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9465525A1EF26828001AD6AC /* RxSwift.framework */; };
-		9465525E1EF2685F001AD6AC /* RxSwift.framework.dSYM in Carthage */ = {isa = PBXBuildFile; fileRef = 9465525D1EF2685F001AD6AC /* RxSwift.framework.dSYM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +54,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				9465525E1EF2685F001AD6AC /* RxSwift.framework.dSYM in Carthage */,
 			);
 			name = Carthage;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9424AAAC1EF2763500E8646D /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/Mac/RxSwift.framework.dSYM; sourceTree = "<group>"; };
 		9446ADB21EF05B150036A603 /* iOS_RaspSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOS_RaspSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9446ADBB1EF05B160036A603 /* iOS_RaspSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_RaspSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9446ADCC1EF05B370036A603 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
@@ -129,6 +128,7 @@
 		9446ADA81EF05B150036A603 = {
 			isa = PBXGroup;
 			children = (
+				9424AAAC1EF2763500E8646D /* RxSwift.framework.dSYM */,
 				9465525D1EF2685F001AD6AC /* RxSwift.framework.dSYM */,
 				9446ADD11EF05CE20036A603 /* README.md */,
 				9446ADCC1EF05B370036A603 /* Cartfile.resolved */,
@@ -656,7 +656,7 @@
 				INFOPLIST_FILE = macOS_RaspSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RaspSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -682,7 +682,7 @@
 				INFOPLIST_FILE = macOS_RaspSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RaspSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -699,7 +699,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = macOS_RaspSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "maxvol.macOS-RaspSwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -715,7 +715,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = macOS_RaspSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "maxvol.macOS-RaspSwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
