@@ -79,12 +79,12 @@ no version yet, just master branch
 
 * Summary of set up
 
-github "maxvol/RaspSwift" ~> "0.0.1"
+github "maxvol/RaspSwift" ~> 0.0.1
 
 * Configuration
 * Dependencies
 
-github "ReactiveX/RxSwift" "3.5.0"
+github "ReactiveX/RxSwift" ~> 3.5.0
 
 * Database configuration
 * How to run tests
