@@ -79,7 +79,7 @@ no version yet, just master branch
 
 * Summary of set up
 
-github "maxvol/RaspSwift" "master"
+github "maxvol/RaspSwift" ~> "0.0.1"
 
 * Configuration
 * Dependencies
