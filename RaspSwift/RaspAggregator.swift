@@ -24,11 +24,15 @@ public class RaspAggregator<S: RaspState> {
 
     private let eventSwitch: BehaviorSubject<Observable<RaspEvent>>
     private let eventSink: PublishSubject<RaspEvent> = PublishSubject()
-
+    private let stateSink: BehaviorSubject<S>
+    private let disposeBag = DisposeBag()
+    
     public init(initial state: S, reducer: RaspReducer<S> = RaspAggregator<S>.defaultReducer, sources: Observable<RaspEvent>...) {
         self.eventSwitch = BehaviorSubject(value: Observable.merge(sources))
         self.events = Observable.merge(self.eventSwitch.switchLatest(), self.eventSink)
-        self.state = self.events.scan(state, accumulator: reducer.reduce)
+        self.stateSink = BehaviorSubject(value: state)
+        self.state = self.stateSink.asObservable()
+        self.events.scan(state, accumulator: reducer.reduce).subscribe(self.stateSink).disposed(by: self.disposeBag)
     }
 
     public func select<R: Comparable>(selector: RaspSelector<S, R>) -> Observable<R> {
@@ -46,5 +50,5 @@ public class RaspAggregator<S: RaspState> {
     public func manual(event: RaspEvent) {
         self.eventSink.onNext(event)
     }
-
+    
 }
