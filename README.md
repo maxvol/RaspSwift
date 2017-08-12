@@ -3,6 +3,7 @@
 **RASP - Reactive Aggregate State Pipeline**
 
 This framework is inspired by Redux and built on top op RxSwift framework.
+Comparing to other similar frameworks, it is exceptionally simple by design and requires the very minimum of boilerplate code.
 
 On many occasions, it makes more sense to group state values together by domain, such as:
 
@@ -18,10 +19,6 @@ How it works (per domain state):
 * events from different sources are gathered into a single stream with *.merge()* operator
 * on every event from the combined stream, it gets applied (reduced) to the current state via *.scan()* operator
 * consumers can subscribe to domain state as a whole or to a single field by using selector which is *.map().distinctUntilChanged()*
-
-### What is this repository for? ###
-
-* Quick summary
 
 Example of usage:
 
@@ -86,17 +83,4 @@ github "maxvol/RaspSwift" ~> 0.0.1
 
 github "ReactiveX/RxSwift" ~> 3.5.0
 
-* Database configuration
-* How to run tests
-* Deployment instructions
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
