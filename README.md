@@ -25,7 +25,7 @@ How it works (per domain state):
 
 Example of usage:
 
-```
+```swift
 struct MyRestState: RaspState {
     var links: [String: String] = [:]
 
