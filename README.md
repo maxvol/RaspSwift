@@ -70,13 +70,13 @@ one1.subscribe( onNext: { field in
 
 * Version
 
-no version yet, just master branch
+0.0.3
 
 ### How do I get set up? ###
 
 * Summary of set up
 
-github "maxvol/RaspSwift" ~> 0.0.1
+github "maxvol/RaspSwift" ~> 0.0.3
 
 * Configuration
 * Dependencies
