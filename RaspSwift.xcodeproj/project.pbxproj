@@ -240,6 +240,7 @@
 				9446ADAF1EF05B150036A603 /* Headers */,
 				9446ADB01EF05B150036A603 /* Resources */,
 				9446ADD01EF05B6B0036A603 /* Carthage */,
+				949F11AC1F834EBA00CEB1EB /* Delete Nested Framework(s) */,
 			);
 			buildRules = (
 			);
@@ -400,6 +401,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		949F11AC1F834EBA00CEB1EB /* Delete Nested Framework(s) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Delete Nested Framework(s)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
