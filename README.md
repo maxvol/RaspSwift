@@ -2,10 +2,11 @@
 
 **RASP - Reactive Aggregate State Pipeline**
 
-This framework is inspired by Redux and built on top op RxSwift framework.
+This Unidirectonal Data Flow framework is inspired by Redux and built on top op RxSwift framework.
 Comparing to other similar frameworks, it is exceptionally simple by design and requires the very minimum of boilerplate code.
 
-On many occasions, it makes more sense to group state values together by domain, such as:
+Rather than declaring plenty of Publish/BehaviorSubjects and grouping them ad hoc by *.combineLatest()*,
+on many occasions it makes more sense to group state values together by domain, such as:
 
 * REST/HATEOAS state with recent links
 * geolocation state
@@ -14,11 +15,15 @@ On many occasions, it makes more sense to group state values together by domain,
 * motion state
 * etc.
 
+That way, at every value update you have a _complete snapshot_ of what is going on in particular domain.
+
 How it works (per domain state):
 
 * events from different sources are gathered into a single stream with *.merge()* operator
 * on every event from the combined stream, it gets applied (reduced) to the current state via *.scan()* operator
 * consumers can subscribe to domain state as a whole or to a single field by using selector which is *.map().distinctUntilChanged()*
+
+![alt text](https://github.com/maxvol/RaspSwift/blob/master/rasp.png "Diagram")
 
 Example of usage:
 
