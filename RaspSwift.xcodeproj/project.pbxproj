@@ -85,7 +85,8 @@
 		946552491EF267F9001AD6AC /* macOS_RaspSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOS_RaspSwiftTests.swift; sourceTree = "<group>"; };
 		9465524B1EF267F9001AD6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9465525A1EF26828001AD6AC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
-		94B4782C201DAD6D0001E0DF /* rasp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rasp.png; sourceTree = "<group>"; };
+		94B4782C201DAD6D0001E0DF /* rasp-geo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rasp-geo.png"; sourceTree = "<group>"; };
+		94B4782D201DB6D90001E0DF /* rasp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rasp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +128,8 @@
 		9446ADA81EF05B150036A603 = {
 			isa = PBXGroup;
 			children = (
-				94B4782C201DAD6D0001E0DF /* rasp.png */,
+				94B4782D201DB6D90001E0DF /* rasp.png */,
+				94B4782C201DAD6D0001E0DF /* rasp-geo.png */,
 				9446ADD11EF05CE20036A603 /* README.md */,
 				9446ADCC1EF05B370036A603 /* Cartfile.resolved */,
 				9446ADCD1EF05B370036A603 /* Cartfile */,

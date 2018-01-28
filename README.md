@@ -13,9 +13,13 @@ on many occasions it makes more sense to group state values together by domain, 
 * UI navigation state
 * lifecycle state
 * motion state
+* data state
 * etc.
 
 That way, at every value update you have a _complete snapshot_ of what is going on in particular domain.
+Besides, there is only one way to update domain state, namely by sending event to the state aggregator - this ensures consistency.
+
+![alt text](https://github.com/maxvol/RaspSwift/blob/master/rasp.png "Diagram")
 
 How it works (per domain state):
 
@@ -25,31 +29,31 @@ How it works (per domain state):
 
 For example, combining independently updated heading and location into one consistent geolocation state snapshot would look as follows -
 
-![alt text](https://github.com/maxvol/RaspSwift/blob/master/rasp.png "Diagram")
+![alt text](https://github.com/maxvol/RaspSwift/blob/master/rasp-geo.png "Diagram")
 
 ...where events and state are defined as follows:
 ```swift
 struct GeoEvent: RaspEvent {
-    case location(Location)
     case heading(heading)
+    case location(Location)
 }
 
 struct GeoState: RaspState {
+var heading: Heading
     var location: Location
-    var heading: Heading
 
-mutating func apply(event: RaspEvent) {
-    switch event {
-    case let geoEvent as GeoEvent:
+    mutating func apply(event: RaspEvent) {
         switch event {
-        case .location(let location):
-            self.location = location
-        case .heading(let heading):
-            self.heading = heading
+        case let geoEvent as GeoEvent:
+            switch event {
+            case .heading(let heading):
+                self.heading = heading
+            case .location(let location):
+                self.location = location
+            }
+        default:
+        break
         }
-    default:
-    break
-    }
     }
 }
 ```
