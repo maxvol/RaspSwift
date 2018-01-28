@@ -23,9 +23,37 @@ How it works (per domain state):
 * on every event from the combined stream, it gets applied (reduced) to the current state via *.scan()* operator
 * consumers can subscribe to domain state as a whole or to a single field by using selector which is *.map().distinctUntilChanged()*
 
+For example, combining independently updated heading and location into one consistent geolocation state snapshot would look as follows -
+
 ![alt text](https://github.com/maxvol/RaspSwift/blob/master/rasp.png "Diagram")
 
-Example of usage:
+...where events and state are defined as follows:
+```swift
+struct GeoEvent: RaspEvent {
+    case location(Location)
+    case heading(heading)
+}
+
+struct GeoState: RaspState {
+    var location: Location
+    var heading: Heading
+
+mutating func apply(event: RaspEvent) {
+    switch event {
+    case let geoEvent as GeoEvent:
+        switch event {
+        case .location(let location):
+            self.location = location
+        case .heading(let heading):
+            self.heading = heading
+        }
+    default:
+    break
+    }
+    }
+}
+```
+A more generic example of usage:
 
 ```swift
 struct MyRestState: RaspState {
