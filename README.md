@@ -17,7 +17,7 @@ on many occasions it makes more sense to group state values together by domain, 
 * etc.
 
 That way, at every value update you have a _complete snapshot_ of what is going on in particular domain.
-Besides, there is only one way to update domain state, namely by sending event to the state aggregator - this ensures consistency.
+Besides, there is only one way to update domain state, namely by sending event to the state aggregator - this ensures _consistency_ of every state snapshot.
 
 ![alt text](https://github.com/maxvol/RaspSwift/blob/master/rasp.png "Diagram")
 
@@ -52,7 +52,7 @@ var heading: Heading
                 self.location = location
             }
         default:
-        break
+            break
         }
     }
 }
