@@ -5,6 +5,8 @@
 This Unidirectonal Data Flow framework is inspired by Redux and built on top op RxSwift framework.
 Comparing to other similar frameworks, it is exceptionally simple by design and requires the very minimum of boilerplate code.
 
+https://medium.com/@maxim.volgin/reactive-aggregate-state-pipeline-5a690383e18e
+
 Rather than declaring plenty of Publish/BehaviorSubjects and grouping them ad hoc by *.combineLatest()*,
 on many occasions it makes more sense to group state values together by domain, such as:
 
