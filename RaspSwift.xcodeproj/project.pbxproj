@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9424AAB01EF27DFF00E8646D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9465525A1EF26828001AD6AC /* RxSwift.framework */; };
+		94396FCA2032C3EB00CF4B68 /* RaspMutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94396FC92032C3EB00CF4B68 /* RaspMutation.swift */; };
 		9446ADBC1EF05B160036A603 /* RaspSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9446ADB21EF05B150036A603 /* RaspSwift.framework */; };
 		9446ADD41EF05D3F0036A603 /* RaspReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADD31EF05D3F0036A603 /* RaspReducer.swift */; };
 		9446ADD61EF05D4B0036A603 /* RaspSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADD51EF05D4B0036A603 /* RaspSelector.swift */; };
@@ -47,20 +48,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		9465525C1EF2682D001AD6AC /* Carthage */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			name = Carthage;
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		94396FC92032C3EB00CF4B68 /* RaspMutation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspMutation.swift; sourceTree = "<group>"; };
 		9446ADB21EF05B150036A603 /* RaspSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RaspSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9446ADBB1EF05B160036A603 /* iOS_RaspSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_RaspSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9446ADCC1EF05B370036A603 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
@@ -87,6 +76,7 @@
 		9465525A1EF26828001AD6AC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
 		94B4782C201DAD6D0001E0DF /* rasp-geo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rasp-geo.png"; sourceTree = "<group>"; };
 		94B4782D201DB6D90001E0DF /* rasp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rasp.png; sourceTree = "<group>"; };
+		94B4782E201DDC950001E0DF /* RaspSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RaspSwift.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +123,7 @@
 				9446ADD11EF05CE20036A603 /* README.md */,
 				9446ADCC1EF05B370036A603 /* Cartfile.resolved */,
 				9446ADCD1EF05B370036A603 /* Cartfile */,
+				94B4782E201DDC950001E0DF /* RaspSwift.playground */,
 				9446ADB41EF05B150036A603 /* RaspSwift */,
 				946552321EF267D2001AD6AC /* iOS_RaspSwift */,
 				9465522D1EF267B0001AD6AC /* iOS_RaspSwiftTests */,
@@ -160,6 +151,7 @@
 				9446ADD31EF05D3F0036A603 /* RaspReducer.swift */,
 				9446ADD51EF05D4B0036A603 /* RaspSelector.swift */,
 				9446ADD71EF05D560036A603 /* RaspState.swift */,
+				94396FC92032C3EB00CF4B68 /* RaspMutation.swift */,
 				9446ADD91EF05D650036A603 /* RaspAggregator.swift */,
 				9446ADDB1EF05DB70036A603 /* RaspEvent.swift */,
 				9446ADDD1EF05E110036A603 /* RaspSource.swift */,
@@ -281,7 +273,8 @@
 				946552381EF267F8001AD6AC /* Frameworks */,
 				946552391EF267F8001AD6AC /* Headers */,
 				9465523A1EF267F8001AD6AC /* Resources */,
-				9465525C1EF2682D001AD6AC /* Carthage */,
+				94117A972221297B00852B53 /* Carthage */,
+				94117A98222129DE00852B53 /* Delete Nested Framework(s) */,
 			);
 			buildRules = (
 			);
@@ -391,6 +384,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		94117A972221297B00852B53 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/RxSwift.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		94117A98222129DE00852B53 /* Delete Nested Framework(s) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Delete Nested Framework(s)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi\n";
+		};
 		9446ADD01EF05B6B0036A603 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,7 +434,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		949F11AC1F834EBA00CEB1EB /* Delete Nested Framework(s) */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -418,7 +448,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi";
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -431,6 +461,7 @@
 				9446ADDA1EF05D650036A603 /* RaspAggregator.swift in Sources */,
 				9446ADDE1EF05E110036A603 /* RaspSource.swift in Sources */,
 				9446ADE01EF05E360036A603 /* Observable+Rasp.swift in Sources */,
+				94396FCA2032C3EB00CF4B68 /* RaspMutation.swift in Sources */,
 				9446ADD61EF05D4B0036A603 /* RaspSelector.swift in Sources */,
 				9446ADD41EF05D3F0036A603 /* RaspReducer.swift in Sources */,
 				9446ADD81EF05D560036A603 /* RaspState.swift in Sources */,
@@ -677,7 +708,6 @@
 				INFOPLIST_FILE = macOS_RaspSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RaspSwift;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = macosx;
@@ -703,7 +733,6 @@
 				INFOPLIST_FILE = macOS_RaspSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RaspSwift;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = macosx;
