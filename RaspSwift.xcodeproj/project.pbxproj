@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94117AA322212B4000852B53 /* RaspReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADD31EF05D3F0036A603 /* RaspReducer.swift */; };
+		94117AA422212B6200852B53 /* RaspSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADD51EF05D4B0036A603 /* RaspSelector.swift */; };
+		94117AA522212B6600852B53 /* RaspState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADD71EF05D560036A603 /* RaspState.swift */; };
+		94117AA622212B6B00852B53 /* RaspMutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94396FC92032C3EB00CF4B68 /* RaspMutation.swift */; };
+		94117AA722212B6E00852B53 /* RaspAggregator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADD91EF05D650036A603 /* RaspAggregator.swift */; };
+		94117AA822212B7200852B53 /* RaspEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADDB1EF05DB70036A603 /* RaspEvent.swift */; };
+		94117AA922212B7600852B53 /* RaspSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADDD1EF05E110036A603 /* RaspSource.swift */; };
+		94117AAA22212B7B00852B53 /* Observable+Rasp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADDF1EF05E360036A603 /* Observable+Rasp.swift */; };
 		9424AAB01EF27DFF00E8646D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9465525A1EF26828001AD6AC /* RxSwift.framework */; };
 		94396FCA2032C3EB00CF4B68 /* RaspMutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94396FC92032C3EB00CF4B68 /* RaspMutation.swift */; };
 		9446ADBC1EF05B160036A603 /* RaspSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9446ADB21EF05B150036A603 /* RaspSwift.framework */; };
@@ -22,13 +30,6 @@
 		946552451EF267F9001AD6AC /* RaspSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9465523C1EF267F8001AD6AC /* RaspSwift.framework */; };
 		9465524A1EF267F9001AD6AC /* macOS_RaspSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946552491EF267F9001AD6AC /* macOS_RaspSwiftTests.swift */; };
 		9465524C1EF267F9001AD6AC /* macOS_RaspSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 9465523E1EF267F8001AD6AC /* macOS_RaspSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		946552531EF26814001AD6AC /* RaspReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADD31EF05D3F0036A603 /* RaspReducer.swift */; };
-		946552541EF26814001AD6AC /* RaspSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADD51EF05D4B0036A603 /* RaspSelector.swift */; };
-		946552551EF26814001AD6AC /* RaspState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADD71EF05D560036A603 /* RaspState.swift */; };
-		946552561EF26814001AD6AC /* RaspAggregator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADD91EF05D650036A603 /* RaspAggregator.swift */; };
-		946552571EF26814001AD6AC /* RaspEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADDB1EF05DB70036A603 /* RaspEvent.swift */; };
-		946552581EF26814001AD6AC /* RaspSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADDD1EF05E110036A603 /* RaspSource.swift */; };
-		946552591EF26814001AD6AC /* Observable+Rasp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9446ADDF1EF05E360036A603 /* Observable+Rasp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -479,13 +480,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				946552571EF26814001AD6AC /* RaspEvent.swift in Sources */,
-				946552561EF26814001AD6AC /* RaspAggregator.swift in Sources */,
-				946552581EF26814001AD6AC /* RaspSource.swift in Sources */,
-				946552591EF26814001AD6AC /* Observable+Rasp.swift in Sources */,
-				946552541EF26814001AD6AC /* RaspSelector.swift in Sources */,
-				946552531EF26814001AD6AC /* RaspReducer.swift in Sources */,
-				946552551EF26814001AD6AC /* RaspState.swift in Sources */,
+				94117AA722212B6E00852B53 /* RaspAggregator.swift in Sources */,
+				94117AA622212B6B00852B53 /* RaspMutation.swift in Sources */,
+				94117AA422212B6200852B53 /* RaspSelector.swift in Sources */,
+				94117AA922212B7600852B53 /* RaspSource.swift in Sources */,
+				94117AA322212B4000852B53 /* RaspReducer.swift in Sources */,
+				94117AA822212B7200852B53 /* RaspEvent.swift in Sources */,
+				94117AAA22212B7B00852B53 /* Observable+Rasp.swift in Sources */,
+				94117AA522212B6600852B53 /* RaspState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
