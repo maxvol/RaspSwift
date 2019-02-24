@@ -115,11 +115,11 @@ one1.subscribe( onNext: { field in
 
 * Summary of set up
 
-github "maxvol/RaspSwift" ~> 0.1.1
+github "maxvol/RaspSwift" ~> 0.1.2
 
 * Configuration
 * Dependencies
 
-github "ReactiveX/RxSwift" ~> 3.5.0
+github "ReactiveX/RxSwift" ~> 4.4.1
 
 
