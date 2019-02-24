@@ -115,7 +115,7 @@ one1.subscribe( onNext: { field in
 
 * Summary of set up
 
-github "maxvol/RaspSwift" ~> 0.1.2
+github "maxvol/RaspSwift" ~> 0.1.5
 
 * Configuration
 * Dependencies
