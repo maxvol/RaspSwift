@@ -33,7 +33,7 @@ public class RaspAggregator<S: RaspState> {
 //        self.stateSink = BehaviorSubject(value: state)
 //        self.state = self.stateSink.asObservable()
 //        self.events.scan(state, accumulator: reducer.reduce).subscribe(self.stateSink).disposed(by: self.disposeBag)
-        self.state = self.events.scan(state, accumulator: reducer.reduce).share()
+        self.state = self.events.scan(state, accumulator: reducer.reduce).replay(1).share()
     }
 
     public func select<R: Comparable>(selector: RaspSelector<S, R>) -> Observable<R> {
