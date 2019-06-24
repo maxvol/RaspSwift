@@ -16,7 +16,7 @@ let package = Package(
         .target(
             name: "RaspSwift",
             dependencies: [],
-            path: "Sources"),
+            path: "RaspSwift"),
         .testTarget(
             name: "RaspSwiftTests",
             dependencies: [
