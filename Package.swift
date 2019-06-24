@@ -16,12 +16,6 @@ let package = Package(
         .target(
             name: "RaspSwift",
             dependencies: [],
-            path: "RaspSwift"),
-        .testTarget(
-            name: "RaspSwiftTests",
-            dependencies: [
-                "RxSwift",
-                "RaspSwift"
-            ])
+            path: "RaspSwift")
     ]
 )
