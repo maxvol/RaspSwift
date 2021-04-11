@@ -1,5 +1,7 @@
 # README #
 
+NB: refer to `rxswift` branch for a working version, this branch is under development.
+
 **RASP - Reactive Aggregate State Pipeline**
 
 This Unidirectonal Data Flow framework is inspired by Redux and built on top op RxSwift framework.
