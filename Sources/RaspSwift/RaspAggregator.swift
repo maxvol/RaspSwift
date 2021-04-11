@@ -10,8 +10,8 @@ import Combine
 
 public class RaspAggregator<S: RaspState> {
 
-    public let events: Observable<RaspEvent>
-    public let state: Observable<S>
+    public let events: RaspPublisher
+    public let state: RaspPublisher<S>
 
     public static var defaultReducer: RaspReducer<S> {
         return RaspReducer<S> { (state, event) throws -> S in
@@ -21,16 +21,16 @@ public class RaspAggregator<S: RaspState> {
         }
     }
 
-    private let eventSwitch: BehaviorSubject<Observable<RaspEvent>>
-    private let eventSink: PublishSubject<RaspEvent> = PublishSubject()
+    private let eventSwitch: CurrentValueSubject<RaspPublisher, Never>
+    private let eventSink: PassthroughSubject<RaspEvent, Never> = PassthroughSubject()
     
-    public init(initial state: S, reducer: RaspReducer<S> = RaspAggregator<S>.defaultReducer, sources: Observable<RaspEvent>...) {
-        self.eventSwitch = BehaviorSubject(value: Observable.merge(sources))
-        self.events = Observable.merge(self.eventSwitch.switchLatest(), self.eventSink)
+    public init(initial state: S, reducer: RaspReducer<S> = RaspAggregator<S>.defaultReducer, sources: Publisher...) {
+        self.eventSwitch = CurrentValueSubject(value: RaspPublisher.merge(sources))
+        self.events = RaspPublisher.merge(self.eventSwitch.switchLatest(), self.eventSink)
         self.state = self.events.scan(state, accumulator: reducer.reduce).share()
     }
 
-    public func select<R: Comparable>(selector: RaspSelector<S, R>) -> Observable<R> {
+    public func select<R: Comparable>(selector: RaspSelector<S, R>) -> Publisher<R> {
         return self.state.map { state in
             return selector.select(state)
         }.distinctUntilChanged { (value) -> R in
@@ -38,12 +38,12 @@ public class RaspAggregator<S: RaspState> {
         }
     }
 
-    public func replace(sources: Observable<RaspEvent>...) {
-        self.eventSwitch.onNext(Observable.merge(sources))
+    public func replace(sources: RaspPublisher...) {
+        self.eventSwitch.send(RaspPublisher.merge(sources))
     }
 
     public func manual(event: RaspEvent) {
-        self.eventSink.onNext(event)
+        self.eventSink.send(event)
     }
     
 }
