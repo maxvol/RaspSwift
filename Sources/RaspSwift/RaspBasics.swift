@@ -5,7 +5,7 @@
 //  Created by Maxim Volgin on 11/04/2021.
 //
 
-import Foundation
+import Combine
 
 public protocol RaspEvent {}
 
