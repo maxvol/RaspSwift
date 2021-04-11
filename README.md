@@ -34,6 +34,9 @@ For example, combining independently updated heading and location into one consi
 ![alt text](https://github.com/maxvol/RaspSwift/blob/master/rasp-geo.png "Diagram")
 
 ...where events and state are defined as follows:
+
+**NB this documentation is for v1 using RxSwift, while v2 is using Combine** 
+
 ```swift
 struct GeoEvent: RaspEvent {
     case heading(heading)
@@ -109,17 +112,6 @@ one1.subscribe( onNext: { field in
 
 * Version
 
-0.0.3
-
-### How do I get set up? ###
-
-* Summary of set up
-
-github "maxvol/RaspSwift" ~> 0.1.5
-
-* Configuration
-* Dependencies
-
-github "ReactiveX/RxSwift" ~> 4.4.1
+2.0.0
 
 
