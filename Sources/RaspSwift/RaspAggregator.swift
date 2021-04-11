@@ -8,10 +8,10 @@
 import Foundation
 import Combine
 
-public class RaspAggregator<S: RaspState> {
+public class RaspAggregator<S: RaspState, E: RaspEventPublisher, P: RaspStatePublisher> {
 
-    public let events: RaspPublisher
-    public let state: RaspPublisher<S>
+    public let events: E
+    public let state: P
 
     public static var defaultReducer: RaspReducer<S> {
         return RaspReducer<S> { (state, event) throws -> S in
@@ -21,12 +21,12 @@ public class RaspAggregator<S: RaspState> {
         }
     }
 
-    private let eventSwitch: CurrentValueSubject<RaspPublisher, Never>
+    private let eventSwitch: CurrentValueSubject<E, Never>
     private let eventSink: PassthroughSubject<RaspEvent, Never> = PassthroughSubject()
     
-    public init(initial state: S, reducer: RaspReducer<S> = RaspAggregator<S>.defaultReducer, sources: Publisher...) {
-        self.eventSwitch = CurrentValueSubject(value: RaspPublisher.merge(sources))
-        self.events = RaspPublisher.merge(self.eventSwitch.switchLatest(), self.eventSink)
+    public init(initial state: S, reducer: RaspReducer<S> = RaspAggregator<S, E, P>.defaultReducer, sources: E...) {
+        self.eventSwitch = CurrentValueSubject(value: E.merge(sources))
+        self.events = E.merge(self.eventSwitch.switchLatest(), self.eventSink)
         self.state = self.events.scan(state, accumulator: reducer.reduce).share()
     }
 
@@ -38,8 +38,8 @@ public class RaspAggregator<S: RaspState> {
         }
     }
 
-    public func replace(sources: RaspPublisher...) {
-        self.eventSwitch.send(RaspPublisher.merge(sources))
+    public func replace(sources: E...) {
+        self.eventSwitch.send(E.merge(sources))
     }
 
     public func manual(event: RaspEvent) {

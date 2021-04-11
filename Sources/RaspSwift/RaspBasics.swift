@@ -25,19 +25,21 @@ public struct RaspSelector<S: RaspState, R: Comparable> {
     }
 }
 
-public protocol RaspPublisher: Publisher where Output == RaspEvent {}
+public protocol RaspEventPublisher: Publisher where Output == RaspEvent {}
 
-public class RaspSource {
+public protocol RaspStatePublisher: Publisher where Output == RaspState {}
+
+public class RaspSource<P: RaspEventPublisher> {
     
-    private let subject = PassthroughSubject<RaspPublisher, Never>()
+    private let subject = PassthroughSubject<P, Never>()
     
     public init() {}
     
-    public var value: RaspPublisher {
-        return self.subject.switchLatest()
+    public var value: P {
+        return self.subject.switchToLatest().eraseToAnyPublisher() as! P
     }
     
-    public func jump(to stream: RaspPublisher) {
+    public func jump(to stream: P) {
         self.subject.send(stream)
     }
     
