@@ -1,3 +1,3 @@
 struct RaspSwift {
-    var text = "Hello, World!"
+    var text = "RaspSwift"
 }

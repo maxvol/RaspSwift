@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+/*
+@available(macOS 11, iOS 13, *)
 public class RaspAggregator<S: RaspState, E: RaspEventPublisher, P: RaspStatePublisher> {
 
     public let events: E
@@ -47,3 +49,4 @@ public class RaspAggregator<S: RaspState, E: RaspEventPublisher, P: RaspStatePub
     }
     
 }
+*/
