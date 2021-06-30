@@ -25,13 +25,13 @@ public struct RaspSelector<S: RaspState, R: Comparable> {
     }
 }
 
-@available(macOS 11, iOS 13, *)
+@available(macOS 11, iOS 14, *)
 public protocol RaspEventPublisher: Publisher where Output == RaspEvent {}
 
-@available(macOS 11, iOS 13, *)
+@available(macOS 11, iOS 14, *)
 public protocol RaspStatePublisher: Publisher where Output == RaspState {}
 
-@available(macOS 11, iOS 13, *)
+@available(macOS 11, iOS 14, *)
 public class RaspSource<P: RaspEventPublisher> {
     
     private let subject = PassthroughSubject<P, Never>()
